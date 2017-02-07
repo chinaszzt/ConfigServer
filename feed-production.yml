@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    zookeeper:
+      discovery:
+        metadata:
+          management.context-path: /
+          health.path: /ping
+        instance-host: 10.0.0.16
+        instance-port: ${server.port}
+      connect-string: 10.0.0.99:2181
+
+
+management.context-path: /
+endpoints.health.path: /ping
+
+server:
+  port: 2234
+management:
+  security:
+    enabled: false
+
+logging:
+  level:
+    ROOT: ERROR
